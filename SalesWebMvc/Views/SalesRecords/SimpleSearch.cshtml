@@ -12,11 +12,11 @@
             <div class="form-group">
                 <div class="form-group">
                     <label for="minDate">Min date</label>
-                    <input type="date" class="form-control" name="minDate" value=@ViewData["minDate"]/>
+                    <input type="date" class="form-control" name="minDate" value="@ViewData["minDate"]"/>
                 </div>
                 <div class="form-group">
                     <label for="maxDate">Max date</label>
-                    <input type="date" class="form-control" name="maxDate" value=@ViewData["maxDate"]/>
+                    <input type="date" class="form-control" name="maxDate" value="@ViewData["maxDate"]"/>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Filter</button>
@@ -49,6 +49,9 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Status)
                     </th>
+                    <th>
+
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -71,6 +74,10 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         </td>
                     </tr>
                 }
